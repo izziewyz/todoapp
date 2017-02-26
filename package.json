@@ -18,6 +18,7 @@
   "homepage": "https://github.com/izziewyz/todoapp#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "dustjs-linkedin": "^2.7.5",
     "express": "^4.14.1",
     "method-override": "^2.3.7",
     "mysql": "^2.13.0",

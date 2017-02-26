@@ -1,7 +1,8 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
+
+const dust = require('express-dustjs');
 const routes = require('./controllers/burgerController.js');
 const db = require('./models')
 
@@ -16,19 +17,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Override with POST with middleware package
 app.use(methodOverride("_method"));
-/*
+
 //Set template engine
-app.engine(
-    "handlebars",
-    exphbs(
-        { defaultLayout: "main" }
-    )
-);
-app.set("view engine", "handlebars");
-*/
+// Use Dustjs as Express view engine 
+app.engine('dust', dust.engine({
+  // Use dustjs-helpers 
+  useHelpers: true
+}))
+app.set('view engine', 'dust')
+app.set('views', path.resolve(__dirname, './views'))
+
 db.sequelize.sync({force: true}).then(() => {
     app.listen(port);
 });
 
-//Use routes defined in burger_controller
+//Use routes defined in controller
 app.use("/", routes);

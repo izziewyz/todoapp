@@ -3,7 +3,7 @@ const router = require('express').Router();
 const Models = require('../models');
 
 //Define router
-let hbsObject = {};
+// let hbsObject = {};
 router.get('/', (req, res) => {
     Models.Task.findAll({}).then((data) => {
       
