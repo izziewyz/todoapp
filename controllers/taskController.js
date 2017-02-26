@@ -1,12 +1,12 @@
 const router = require('express').Router();
-
+const path = require('path');
 const Models = require('../models');
 
 //Define router
 // let hbsObject = {};
 router.get('/', (req, res) => {
     Models.Task.findAll({}).then((data) => {
-      res.send('Sup');
+      res.sendFile(path.join(__dirname, '../index.html'));
     });
 });
 
