@@ -1,9 +1,10 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const dust = require('express-dustjs');
-const routes = require('./controllers/burgerController.js');
+const routes = require('./controllers/');
 const db = require('./models')
 
 const app = require('express')();
@@ -23,7 +24,8 @@ app.use(methodOverride("_method"));
 app.engine('dust', dust.engine({
   // Use dustjs-helpers 
   useHelpers: true
-}))
+}));
+
 app.set('view engine', 'dust')
 app.set('views', path.resolve(__dirname, './views'))
 
@@ -32,4 +34,6 @@ db.sequelize.sync({force: true}).then(() => {
 });
 
 //Use routes defined in controller
-app.use("/", routes);
+// console.log(routes.taskController)
+app.use("/", routes.taskController);
+app.use('/', routes.listController);

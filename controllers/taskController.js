@@ -6,7 +6,7 @@ const Models = require('../models');
 // let hbsObject = {};
 router.get('/', (req, res) => {
     Models.Task.findAll({}).then((data) => {
-      
+      res.send('Sup');
     });
 });
 
