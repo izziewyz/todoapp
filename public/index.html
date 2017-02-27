@@ -4,7 +4,7 @@
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,8 +14,30 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.js"></script>
+      <script type="text/javascript" src="js/add-ons.js"></script>
     
-      <!-- nav bar follows -->
+<!--       <nav class="">
+        <div class="nav-wrapper container">
+          <a href="#!" class="brand-logo">websitename.com</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./add-task.html">Add Task</a></li>
+            <li><a href="./do-task.html">Do Task</a></li>
+            <li><a href="./lists.html">Lists</a></li>
+            <li><a href="./done.html">Done</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./add-task.html">Add Task</a></li>
+            <li><a href="./do-task.html">Do Task</a></li>
+            <li><a href="./lists.html">Lists</a></li>
+            <li><a href="./done.html">Done</a></li>
+          </ul>
+        </div>
+      </nav> -->  
+
+      <!-- nav bar begin -->
       <nav class="">
         <div class="nav-wrapper container">
           <a href="#!" class="brand-logo">websitename.com</a>
@@ -33,11 +55,13 @@
             <li><a href="./done/">Done</a></li>
           </ul>
         </div>
-      </nav>  
+      </nav> 
+      <!-- nav bar end -->
+
       <div class='container'>
-      <!-- cards row1 goes here -->
-      <div class="row">
-        <!-- card1 goes here -->
+      <div class="row">      
+        
+        <!-- Add Task Card -->
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
@@ -54,7 +78,8 @@
             </div>
           </div>
         </div>
-        <!-- card2 goes here -->
+        
+        <!-- Do Task Card -->
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
@@ -73,9 +98,7 @@
         </div>
       <!-- </div> -->
 
-      <!-- cards row2 go here -->
-      <!-- <div class="row"> -->
-        <!-- card1 goes here -->
+        <!-- Reference Lists Card -->
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
@@ -90,7 +113,8 @@
             </div>
           </div>
         </div>
-        <!-- card1 goes here -->
+        
+        <!-- Done Card -->
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
@@ -108,6 +132,5 @@
       </div>
       </div> <!-- container end -->
     </body>
-
 
   </html>

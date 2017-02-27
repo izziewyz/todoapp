@@ -574,6 +574,8 @@ if (jQuery) {
 
   $(document).ready(function(){
     $('.collapsible').collapsible();
+    // $(".button-collapse").sideNav();
+    // $('select').material_select();
   });
 }( jQuery ));;(function ($) {
 
@@ -8029,3 +8031,4 @@ Picker.extend( 'pickadate', DatePicker )
       }
     }; // Plugin end
 }( jQuery ));
+
