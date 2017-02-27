@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [['House, Office, Mobile, Other']] //Enum check
+                isIn: [['House', 'Office', 'Mobile', 'Other']] //Enum check
             }
         },
 

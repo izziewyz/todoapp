@@ -3,16 +3,17 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const dust = require('express-dustjs');
+const dust = require('dustjs-linkedin');
 const routes = require('./controllers/');
 const db = require('./models')
 
 const app = require('express')();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
+app.set('views', path.resolve(__dirname, './views'))
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -21,13 +22,12 @@ app.use(methodOverride("_method"));
 
 //Set template engine
 // Use Dustjs as Express view engine 
-app.engine('dust', dust.engine({
-  // Use dustjs-helpers 
-  useHelpers: true
-}));
+// app.engine('dust', dust.engine({
+//   // Use dustjs-helpers 
+//   useHelpers: true
+// }));
 
 app.set('view engine', 'dust')
-app.set('views', path.resolve(__dirname, './views'))
 
 db.sequelize.sync({force: true}).then(() => {
     app.listen(port);
