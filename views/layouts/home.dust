@@ -1,3 +1,9 @@
+{> "layouts/main" /}
+
+
+{<main_content}
+
+
 <div class="row">      
         
         <!-- Add Task Card -->
@@ -69,3 +75,5 @@
           </div>
         </div>
     </div>
+
+{/main_content}

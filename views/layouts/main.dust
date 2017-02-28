@@ -39,7 +39,7 @@
       <!-- nav bar end -->
 
       <div class='container'>
-        {>home /}
+        {+main_content}{/main_content}
       </div> <!-- container end -->
     </body>
 

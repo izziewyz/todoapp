@@ -11,7 +11,6 @@ const db = require('./models')
 const app = require('express')();
 const port = process.env.PORT || 3003;
 
-// asdasdasdasdadasd
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
@@ -34,7 +33,7 @@ cons.dust.render('notatemplate', {
 });
 // require('./dust-helpers')(cons.requires.dust);
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({force: false}).then(() => {
     app.listen(port);
     console.log('App running on: ' + port);
 });

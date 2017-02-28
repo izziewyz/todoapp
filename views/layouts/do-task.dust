@@ -1,0 +1,12 @@
+{> "layouts/main" /}
+
+
+{<main_content}
+
+<h1>Super duper {#tasks}
+    {task_name}
+    {/tasks}
+</h1>
+
+
+{/main_content}
