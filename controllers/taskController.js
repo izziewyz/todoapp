@@ -5,12 +5,12 @@ const Models = require('../models');
 //Define router
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
-})
+});
 
 
 router.get('/do-task', (req, res) => {
     Models.Task.findAll({}).then((data) => {
-          res.send(data)
+          res.send(data);
     });
 });
 
