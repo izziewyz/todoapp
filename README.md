@@ -1,3 +1,3 @@
-# Different Change todoapp
+#todoapp
 
-Blerg Group Project #2
+Group Project #2
