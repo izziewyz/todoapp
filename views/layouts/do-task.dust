@@ -2,11 +2,141 @@
 
 
 {<main_content}
-
+<!--
 <h1>Super duper {#tasks}
     {task_name}
+    {id}
+    {duration_minutes}
+    {context}
     {/tasks}
-</h1>
+</h1>-->
+    <h2 class="center-align">Pick your options below.</h2>
+   <!--sliderbar -->  
+<form method="POST">
+   <div class="row">
+       <div class="col l6 offset-l3 s12">
+
+    <div class="row">
+
+        <!-- Add Task Card -->
+        <div class="col s6 m3">
+          <div class="card z-depth-1">
+            <!--<div class="card-image">
+              <a href="../add-task/">
+                <img src="../images/addTask.png">
+              </a>
+
+            </div>-->
+            <div class="card-content">
+                <span class="icon-container">
+                    <i class="large material-icons">store</i>
+                </span>
+            </div>
+            <div class="card-action">
+                <input name="context" type="radio" id="card-home" value="House" />
+                <label for="card-home">Home</label>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Do Task Card -->
+        <div class="col s6 m3">
+          <div class="card z-depth-1">
+            <!--<div class="card-image">
+              <a href="../do-task/">
+                <img src="../images/doTask.png">
+              </a>
+
+            </div>-->
+             <div class="card-content">
+                <span class="icon-container">
+                    <i class="large material-icons">work</i>
+                </span>
+            </div>
+            <div class="card-action">
+              <input name="context" type="radio" id="card-work" value="Office"/>
+                <label for="card-work">Work</label>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+        <!-- Reference Lists Card -->
+        <div class="col s6 m3">
+          <div class="card z-depth-1">
+            <!--<div class="card-image">
+              <img src="../images/lists.jpg">
+
+            </div>-->
+            <div class="card-content">
+                <span class="icon-container">
+                    <i class="large material-icons">navigation</i>
+                </span>
+            </div>
+            <div class="card-action">
+                <input name="context" type="radio" id="card-mobile" value="Mobile" />
+                <label for="card-mobile">Mobile</label>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Done Card -->
+        <div class="col s6 m3">
+          <div class="card z-depth-1">
+            <!--<div class="card-image">
+              <img src="../images/doneTask.jpg">
+
+            </div>-->
+              <div class="card-content">
+                <span class="icon-container">
+                    <i class="large material-icons">insert_chart</i>
+                </span>
+                </div>
+             <div class="card-action">
+                <input name="context" type="radio" id="card-other" value="Other"/>
+                <label for="card-other">Other</label>
+            </div>
+          </div>
+        </div>
+
+      
+      </div> <!--row-->
+    </div>
+   </div>
+      
+	<!--input auto complete box-->
+    <div class="row">
+    <div class="col s6 offset-s3">
+            <p class="range-field">
+                <label name="duration_minutes">How many minutes do you have?</label>
+                <input type="range" id="time-range" name="duration_minutes" min="1" max="120" />
+            </p>
+    </div>
+   </div>
+   <!--<div class="row">
+        <input type="" name="" autocomplete="on" style="margin-left: 535px; height: 35px; width: 200px;">
+        <a class="waves-effect waves-light btn-large" style="margin-left: 585px; margin-top: 20px;">GO</a>
+   </div>-->
+    <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">textsms</i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Autocomplete</label>
+          
+          <div class="col s6 offset-s3">
+            <button class="btn waves-effect waves-light " type="submit" name="action">Search
+                <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <a href="../view-all-tasks" class="center-align">View All Tasks</a>
+    </div>
+  </div>
+</form>
 
 
+	
 {/main_content}

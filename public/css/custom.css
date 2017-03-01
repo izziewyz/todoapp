@@ -11,5 +11,20 @@
 	justify-content: center;
 }
 
+.center-block {
+    margin: 0 auto;
 
+}
+
+.icon-container {
+    margin: 0 auto;
+    float: none;
+
+}
+
+i.large {
+    line-height: 100px;
+	font-size: 6rem;
+    text-align: center;
+}
 
