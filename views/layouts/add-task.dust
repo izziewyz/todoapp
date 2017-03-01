@@ -3,199 +3,52 @@
 
 {<main_content}
 
-<h1>Did it work</h1>
-<!-- Form for adding new todo task begin -->
-       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Task</label>
-            </div>
-            <!--  See add-ons.js for json object.
-            The object will need to be built out of existing projects -->
-            <div class="input-field col s2">
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input">Project</label>        
-            </div>
-            <div class="input-field col s2">
-              <select multiple>
-                <option value="" disabled selected>Context</option>
-                <option value="1">House</option>
-                <option value="2">Office</option>
-                <option value="3">Mobile</option>
-                <option value="4">Other</option>
-              </select>
-              <label></label>
-            </div>
-            <div class="input-field col s2">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Notes</label>
-            </div>
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Duration</label>
-            </div>
-            <div class="input-field col s2">
-              <select>
-                <option value="" disabled selected>Priority</option>
-                <option value="1">Priority 1</option>
-                <option value="2">Priority 2</option>
-                <option value="3">Priority 3</option>
-              </select>
-              <label></label>
-            </div>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <span>
+              <h3 class="center-align">Task Dump</h3>
+             </span>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action">Add</button>      
-        </form>
-       </div>
-      <!-- Form for adding new todo task end -->
-      <h1>List of ToDos</h1>
-      <div class = "divider"></div>  
-      <div class = "divider"></div>  
-      
-      <!-- Dump todo tasks from SQL in this div for length of todo tasks -->
-      <!-- 3 examples are listed below -->
+        </div>
 
-      <!-- Display existing todo task begin -->
-       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Do Taxes</label>
+      <!-- Add task form begin -->
+        <div class="row">
+          <form class="col s12" method="POST">
+            <div class="row">
+              <div class="input-field col s8 offset-s2">
+                <input id="task_name" type="text" class="validate" name="task_name">
+                <label for="task_name">New Task</label>
+              </div>
             </div>
-            <!--  See add-ons.js for json object.
-            The object will need to be built out of existing projects -->
-            <div class="input-field col s2">
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input">doTaxes</label>        
+            <div class = "row">           
+              <button class="waves-effect waves-light btn-large col s8 offset-s2" type="submit" name="action">Add</button> 
+            </div>     
+          </form>
+        </div>
+      <!-- Add task form end -->
+        
+      <!-- Div to populate added todos -->
+        <div class="row">
+          <h3 class="center-align">Recently Added Tasks</h3>
+                   
+          {#tasks}
+            <!--{>"partials/task-list"/}-->
+            <!--{> "partials/task-list"/}-->
+             <div class="divider"></div>
+            <div class="section">
+                <h5>{task_name}</h5>
+                <p>{notes}</p>
+                <p>{duration}</p>
+                Priority: {priority}
             </div>
-            <div class="input-field col s2">
-              <select multiple>
-                <option value="" disabled selected>House, Office</option>
-                <option value="1">House</option>
-                <option value="2">Office</option>
-                <option value="3">Mobile</option>
-                <option value="4">Other</option>
-              </select>
-              <label></label>
-            </div>
-            <div class="input-field col s2">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Download W2</label>
-            </div>
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">120 minutes</label>
-            </div>
-            <div class="input-field col s2">
-              <select>
-                <option value="" disabled selected>Priority 1</option>
-                <option value="1">Priority 1</option>
-                <option value="2">Priority 2</option>
-                <option value="3">Priority 3</option>
-              </select>
-              <label></label>
-            </div>
+          {/tasks}
+          <div class="divider"></div>
+          <div class="section">
+            <h5>2nd most recent todo task</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque necessitatibus libero ex nemo, harum dolore! Error, vitae aliquam doloremque perferendis tempore. Quis ipsam eum expedita labore corporis repudiandae quia doloremque.</p>
           </div>
-          <a class="waves-effect waves-light btn">Complete</a>
-        </form>
-       </div>
-      <!-- Display existing todo task end -->
+        </div> 
 
-      <!-- Display existing todo task begin -->
-       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Watch Movie</label>
-            </div>
-            <!--  See add-ons.js for json object.
-            The object will need to be built out of existing projects -->
-            <div class="input-field col s2">
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input"></label>        
-            </div>
-            <div class="input-field col s2">
-              <select multiple>
-                <option value="" disabled selected>House</option>
-                <option value="1">House</option>
-                <option value="2">Office</option>
-                <option value="3">Mobile</option>
-                <option value="4">Other</option>
-              </select>
-              <label></label>
-            </div>
-            <div class="input-field col s2">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Ref Movies List</label>
-            </div>
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">90 minutes</label>
-            </div>
-            <div class="input-field col s2">
-              <select>
-                <option value="" disabled selected>Priority 3</option>
-                <option value="1">Priority 1</option>
-                <option value="2">Priority 2</option>
-                <option value="3">Priority 3</option>
-              </select>
-              <label></label>
-            </div>
-          </div> 
-          <a class="waves-effect waves-light btn">Complete</a>    
-        </form>
-       </div>
-      <!-- Display existing todo task end -->
 
-      <!-- Display existing todo task begin -->
-       <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Team Project</label>
-            </div>
-            <!--  See add-ons.js for json object.
-            The object will need to be built out of existing projects -->
-            <div class="input-field col s2">
-              <input type="text" id="autocomplete-input" class="autocomplete">
-              <label for="autocomplete-input">teamProject2</label>        
-            </div>
-            <div class="input-field col s2">
-              <select multiple>
-                <option value="" disabled selected>Other</option>
-                <option value="1">House</option>
-                <option value="2">Office</option>
-                <option value="3">Mobile</option>
-                <option value="4">Other</option>
-              </select>
-              <label></label>
-            </div>
-            <div class="input-field col s2">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Notes</label>
-            </div>
-            <div class="input-field col s2">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">30 minutes</label>
-            </div>
-            <div class="input-field col s2">
-              <select>
-                <option value="" disabled selected>Priority 1</option>
-                <option value="1">Priority 1</option>
-                <option value="2">Priority 2</option>
-                <option value="3">Priority 3</option>
-              </select>
-              <label></label>
-            </div>
-          </div>  
-          <a class="waves-effect waves-light btn">Complete</a>   
-        </form>
-       </div>
-      <!-- Display existing new todo task end -->
 
 {/main_content}
