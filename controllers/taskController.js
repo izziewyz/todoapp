@@ -4,18 +4,27 @@ const Models = require('../models');
 
 //Define router
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
-})
-
+    // res.sendFile(path.join(__dirname, '../index.html'));
+    res.render('./layouts/main');
+});
 
 router.get('/do-task', (req, res) => {
     Models.Task.findAll({}).then((data) => {
-          res.send(data)
+        let dustObj = {};
+        console.log(data[0]['dataValues'])
+        dustObj.tasks = data[0]['dataValues'];
+        console.log(dustObj)
+          res.render('./layouts/do-task', dustObj);
     });
 });
 
-// Change to post after form is ready. GET for testing.
 router.get('/add-task', (req, res) => {
+     res.render('./layouts/add-task');
+    // res.sendFile(path.join(__dirname, '../public/add-task.html'));
+});
+
+// Change to post after form is ready. GET for testing.
+router.get('/add-task-test', (req, res) => {
   
     Models.Task.create({
         task_name:"name",

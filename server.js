@@ -3,7 +3,8 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const dust = require('dustjs-linkedin');
+// const dust = require('dustjs-linkedin');
+const cons = require('consolidate');
 const routes = require('./controllers/');
 const db = require('./models')
 
@@ -20,17 +21,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Override with POST with middleware package
 app.use(methodOverride("_method"));
 
-//Set template engine
-// Use Dustjs as Express view engine 
-// app.engine('dust', dust.engine({
-//   // Use dustjs-helpers 
-//   useHelpers: true
-// }));
+app.engine('dust', cons.dust);
+app.set('view engine', 'dust');
+app.set('views', 'views');
 
-app.set('view engine', 'dust')
+cons.dust.render('notatemplate', {
+  ext: app.get('view engine'),
+  views: path.resolve(__dirname, app.get('views'))
+}, function() {
+    console.log('Template Worked')
+});
+// require('./dust-helpers')(cons.requires.dust);
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({force: false}).then(() => {
     app.listen(port);
+    console.log('App running on: ' + port);
 });
 
 //Use routes defined in controller

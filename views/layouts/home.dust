@@ -1,0 +1,79 @@
+{> "layouts/main" /}
+
+
+{<main_content}
+
+
+<div class="row">      
+        
+        <!-- Add Task Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <a href="./add-task/">
+                <img src="images/addTask.png">
+              </a>
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./add-task/">Add Task</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Do Task Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <a href="./do-task/">
+                <img src="images/doTask.png">
+              </a>
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./do-task/">Do Task</a>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+        <!-- Reference Lists Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/lists.jpg">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./lists/">Lists</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Done Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/doneTask.jpg">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./done/">Done</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+{/main_content}
