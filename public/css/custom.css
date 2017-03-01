@@ -1,9 +1,14 @@
 .fixed-button-bottom {
-    position: fixed;
-    bottom: 5px;
-    width: 100%;
-    /*margin-right: 50%; */
-    /*margin-left: 50%;*/
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+
+}
+
+.center-button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 
