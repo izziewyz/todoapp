@@ -6,7 +6,7 @@
       <!--Import materialize.css-->
       <!-- <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/> -->
       <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-      <!--Import custom.css-->
+      <!--Import materialize.css-->
       <!-- <link type="text/css" rel="stylesheet" href="../css/custom.css"  media="screen,projection"/> -->
       <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
 
@@ -46,7 +46,7 @@
       <!-- nav bar end -->
 
       <div class='container'> 
-      <!-- Page Header -->
+      <!-- Page Title -->
         <div class = "row">
           <div class = "col s8 offset-s2">
             <span><h3 class = "center-align">Task Dump</h3></span>
@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class = "row">           
-              <button class="waves-effect waves-light btn-large col s8 offset-s2" type="submit" name="action">Add</button> 
+              <button class="waves-effect waves-light btn-large col s8 offset-s2 disabled" type="submit" name="action">Add</button> 
             </div>     
           </form>
         </div>
@@ -73,25 +73,79 @@
         <div class="row">
           <div class="divider"></div>
           <div class="col s2">
-            <a class="btn-floating btn-large red left">
+            <a class="btn-floating btn-large red left hide">
               <i class="large material-icons">done</i>
             </a> 
           </div>
           <div class = "col s8">
               <h5>Most recent todo task</h5>
-              <p>Notes field will go here for do-task page but there won't be any upon initial add.  Should we remove this from this template or keep an empty paragraph tag?</p>
+              <p class = "hide">Notes field will go here for do-task page but there won't be any upon initial add.  Should we remove this from this template or keep an empty paragraph tag?</p>
           </div>
           <div class= "col s2">
-            <a class="btn-floating btn-large red right">
+            <a class="btn-floating btn-large red right hide">
               <i class="large material-icons">mode_edit</i>
             </a>          
           </div>
         </div>  
+        <!-- Task edit form begin -->
+        <div class="row">
+          <form class="col s12">
+            <!-- Time slider -->
+            <div class="row">
+              <form action = "#">
+                <p>Select estimated task time</p>
+                <p class="range-field">
+                  <input type="range" id="task_time" min="0" max="100" />
+                </p>
+              </form>
+            </div>
+            <!-- Context and project -->
+            <div class="row">
+              <div class="input-field col s6">
+                <select multiple>
+                  <option value="" disabled selected>Context populated from SQL</option>
+                  <option value="1">Home</option>
+                  <option value="2">Work</option>
+                  <option value="3">Outings</option>
+                  <option value="3">Other</option>
+                </select>
+                <label>Select Context</label>
+              </div>              
+              <div class="input-field col s6">
+                <input placeholder="Project from SQL" id="project_name" type="text" class="autocomplete">
+                <label for="project_name">Project Name</label>
+              </div>
 
+            </div> 
+            <!-- Priority and notes -->
+            <div class="row">
+              <div class="input-field col s6">
+                <select>
+                  <option value="" disabled selected>Priority populated from SQL</option>
+                  <option value="1">Priority 1</option>
+                  <option value="2">Priority 2</option>
+                  <option value="3">Priority 3</option>
+                </select>
+                <label>Select Priority</label>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="Notes from SQL" id="task_notes" type="text" class="validate">
+                <label for="task_notes">Task Notes</label>
+              </div>
+            </div>
+            <div class ="row">
+              <button class="waves-effect waves-light btn-large col s2" type="submit" name="action">Update</button> 
+              <button class="waves-effect waves-light btn-large col s4 offset-s2" type="submit" name="action">Cancel</button> 
+              <button class="waves-effect waves-light btn-large col s2 offset-s2" type="submit" name="action">Delete</button> 
+              
+            </div>
+          </form>
+        </div>
+        <!-- Task edit form end -->
         <div class="row">
           <div class="divider"></div>
           <div class="col s2">
-            <a class="btn-floating btn-large red left">
+            <a class="btn-floating btn-large red left disabled">
               <i class="large material-icons">done</i>
             </a> 
           </div>
@@ -100,7 +154,7 @@
               <p>Notes field will go here for do-task page but there won't be any upon initial add.  Should we remove this from this template or keep an empty paragraph tag?</p>
           </div>
           <div class= "col s2">
-            <a class="btn-floating btn-large red right">
+            <a class="btn-floating btn-large red right disabled">
               <i class="large material-icons">mode_edit</i>
             </a>          
           </div>
@@ -109,7 +163,7 @@
         <div class="row">
           <div class="divider"></div>
           <div class="col s2">
-            <a class="btn-floating btn-large red left">
+            <a class="btn-floating btn-large red left disabled">
               <i class="large material-icons">done</i>
             </a> 
           </div>
@@ -118,13 +172,13 @@
               <p>Notes field will go here for do-task page but there won't be any upon initial add.  Should we remove this from this template or keep an empty paragraph tag?</p>
           </div>
           <div class= "col s2">
-            <a class="btn-floating btn-large red right">
+            <a class="btn-floating btn-large red right disabled">
               <i class="large material-icons">mode_edit</i>
             </a>          
           </div>
         </div>  
       </div>
-      <a class="waves-effect waves-light btn fixed-button-bottom">Manage</a>
+      <a class="waves-effect waves-light btn fixed-button-bottom hide">Manage</a>
       </div>
         
     </body>
