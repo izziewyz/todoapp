@@ -33,7 +33,7 @@ cons.dust.render('notatemplate', {
 });
 // require('./dust-helpers')(cons.requires.dust);
 
-db.sequelize.sync({force: false}).then(() => {
+db.sequelize.sync({force: true}).then(() => {
     app.listen(port);
     console.log('App running on: ' + port);
 });
