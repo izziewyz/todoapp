@@ -1,0 +1,136 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+      <!-- <link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/> -->
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <!-- <script type="text/javascript" src="../js/materialize.js"></script> -->
+      <script type="text/javascript" src="js/add-ons.js"></script>
+      <!-- <script type="text/javascript" src="../js/add-ons.js"></script> -->
+    
+
+      <!-- nav bar begin -->
+        <nav class="">
+        <div class="nav-wrapper container">
+          <a href="../index/" class="brand-logo">knockshitsout.com</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="./add-task/">Dump Task</a></li>
+            <li><a href="./do-task/">Do Task</a></li>
+            <li><a href="./lists/">Ref Lists</a></li>
+            <li><a href="./done/">Done Tasks</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="./add-task/">Dump Task</a></li>
+            <li><a href="./do-task/">Do Task</a></li>
+            <li><a href="./lists/">Ref Lists</a></li>
+            <li><a href="./done/">Done Task</a></li>
+          </ul>
+        </div>
+        </nav> 
+      <!-- nav bar end -->
+
+      <div class='container'>
+      <div class="row">      
+        
+        <!-- Home Task Card -->
+        <div class="col s6 m3">
+          <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+          
+          <label for="filled-in-box">
+          
+          <div class="card">
+            <div class="card-image">
+              <!-- <a href="#" class="click-to-toggle"> -->
+          
+                <img src="images/home1.png">
+
+
+              <!-- </a> -->
+              <span class="card-title">Home
+                <!-- <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" /> -->
+                <!-- <label for="filled-in-box"></label> -->
+              </span>
+<!--               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+<!--               <p>
+                <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                <label for="filled-in-box">Home</label>
+              </p> -->
+            </div>
+<!--             <div class="card-content">
+              <p>Paragraph text</p>
+            </div> -->
+<!--             <div class="card-action">
+              <a href="./add-task/">Home</a>
+            </div> -->
+          </div>
+          </label>
+
+        </div>
+        
+        <!-- Do Task Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <a href="./do-task/">
+                <img src="images/doTask.png">
+              </a>
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./do-task/">Do Task</a>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+        <!-- Reference Lists Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/lists.jpg">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./lists/">Ref Lists</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Done Card -->
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/doneTask.jpg">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p></p>
+            </div>
+            <div class="card-action">
+              <a href="./done/">Done Tasks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div> <!-- container end -->
+    </body>
+
+  </html>
