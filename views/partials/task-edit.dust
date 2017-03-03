@@ -5,13 +5,13 @@
             <div class="row" >
               <p>Select estimated task time</p>
                 <p class="range-field">
-                  <input type="range" name="duration_minutes" min="1" max="120" value="{duration_minutes}"/>
+                  <input type="range" name="duration_minutes" min="1" max="120"  value="{duration_minutes}"/>
                 </p>
             </div>
             <!-- Context and project -->
             <div class="row">
               <div class="input-field col s6">
-                <select multiple value="{context}" name="context">
+                <select value="{context}" name="context">
                   <!--<option value="" disabled selected>Context populated from SQL</option>-->
                   <option value="home">Home</option>
                   <option value="work">Work</option>

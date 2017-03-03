@@ -12,7 +12,6 @@ router.get('/do-task', (req, res) => {
     Models.Task.findAll({}).then((data) => {
         let dustObj = {};
         dustObj.tasks = data;
-        // console.log(dustObj)
           res.render('./layouts/do-task', dustObj);
     });
 });
@@ -42,6 +41,22 @@ router.post('/do-task', (req, res) => {
     });
 });
 
+router.get('/done', (req, res) => {
+    Models.Task.findAll({
+        order: 'updatedAt DESC',
+        where: {
+            completed: {
+                $eq: true
+            }
+        }
+    }).then((data) => {
+            // console.log(data)
+        let dustObj = {};
+        dustObj.tasks = data;
+        res.render('./layouts/view-task', dustObj);
+    });
+});
+
 
 router.get('/manage-task', (req, res) => {
     Models.Task.findAll({
@@ -59,15 +74,16 @@ router.post('/add-task', (req, res) => {
     Models.Task.create({
         task_name: req.body.task_name,
         project_name: "",
-        context: "home",
+        context: req.body.context,
         notes: "",
-        duration_minutes: 45,
+        duration_minutes: req.body.duration_minutes,
         priority: 3,
         
     }).then((data) => {
         res.redirect('../add-task');
     });
 });
+
 // Route for viewing 5 most recent tasks on the add task page
 router.get('/add-task', (req, res) => {
         Models.Task.findAll({
@@ -81,7 +97,6 @@ router.get('/add-task', (req, res) => {
 });
 
 router.put('/do-task/:id', (req, res) => {
-    
     Models.Task.update({
        completed: true
     },
@@ -89,9 +104,7 @@ router.put('/do-task/:id', (req, res) => {
         where: {
             id: req.params.id
         }
-    }
-    
-    ).then(() => res.redirect('back'));
+    }).then(() => res.redirect('back'));
 });
 
 router.put('/manage-task/:id', (req, res) => {

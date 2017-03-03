@@ -26,14 +26,14 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="../add-task/">Add Task</a></li>
             <li><a href="../do-task/">Do Task</a></li>
-            <li><a href="../lists/">Lists</a></li>
-            <li><a href="../done/">Done</a></li>
+            <li><a href="../manage-task/">Manage Tasks</a></li>
+            <!--<li><a href="../lists/">Lists</a></li>-->
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a href="../add-task/">Add Task</a></li>
             <li><a href="../do-task/">Do Task</a></li>
-            <li><a href="../lists/">Lists</a></li>
-            <li><a href="../done/">Done</a></li>
+            <li><a href="../mangage-task/">Manage Tasks</a></li>
+            <!--<li><a href="../lists/">Lists</a></li>-->
           </ul>
         </div>
       </nav> 

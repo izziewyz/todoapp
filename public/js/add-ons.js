@@ -14,6 +14,7 @@
     });
 
     $('.edit-button').on('click', (event) => {
+      // $('.edit-form').map(form => form.style.display = "none");
       $('#edit_' + event.currentTarget.dataset.id).animate({
             height: "toggle",
             opacity: '1',

@@ -14,13 +14,28 @@
 
       <!-- Add task form begin -->
         <div class="row">
-          <form class="col s12" method="POST">
+          <form class="col s8 offset-s2" method="POST">
             <div class="row">
+             <div class="col s8 offset-s2" >
+              <p>Select estimated task time</p>
+                <p class="range-field">
+                  <input type="range" name="duration_minutes" min="1" max="120" value="{duration_minutes}"/>
+                </p>
+            </div>
               <div class="input-field col s8 offset-s2">
                 <input id="task_name" type="text" class="validate" name="task_name">
                 <label for="task_name">New Task</label>
               </div>
             </div>
+            <div class="input-field col s8 offset-s2">
+                <select value="{context}" name="context">
+                  <option value="home">Home</option>
+                  <option value="work">Work</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="any">Any</option>
+                </select>
+                <label>Select Context</label>
+              </div> 
             <div class = "row">           
               <button class="waves-effect waves-light btn-large col s8 offset-s2" type="submit" name="action">Add</button> 
             </div>     
@@ -30,7 +45,7 @@
         
       <!-- Div to populate added todos -->
         <div class="row">
-          <h3 class="center-align">Recently Added Tasks</h3>
+          <h4 class="center-align">Recently Added Tasks</h4>
         </div> 
         {> "partials/task-item" taskList=tasks/}
 

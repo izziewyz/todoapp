@@ -94,8 +94,8 @@
                 </span>
                 </div>
              <div class="card-action">
-                <input name="context" type="radio" id="card-other" value="any"/>
-                <label for="card-other">Other</label>
+                <input checked name="context" type="radio" id="card-other" value="any"/>
+                <label for="card-other">Any</label>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">textsms</i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
+          <input type="text" id="autocomplete-input" name="project_name" class="autocomplete">
           <label for="autocomplete-input">Project Name</label>
           
           <div class="col s6 offset-s3">
@@ -133,7 +133,7 @@
           </div>
         </div>
       </div>
-      <a href="../manage-task" class="center-align">View All Tasks</a>
+      <!--<a href="../manage-task" class="center-align">View All Tasks</a>-->
     </div>
   </div>
 </form>
