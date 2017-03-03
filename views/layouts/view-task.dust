@@ -1,0 +1,7 @@
+{> "layouts/main" /}
+{<main_content}
+    <h2>Your tasks</h2>
+    {> "partials/task-item" taskList=tasks/}
+
+{/main_content}
+

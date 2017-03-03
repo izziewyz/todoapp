@@ -22,6 +22,26 @@
 
 }
 
+.edit-form {
+    display: none;
+    /*height: 0;*/
+    opacity: 0.25;
+}
+
+/*#task_1 > div.col.s6 > h5*/
+
+.disabled > div > h5,
+.disabled > div > p {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
 /*i.large {
     line-height: 100px;
 	font-size: 6rem;

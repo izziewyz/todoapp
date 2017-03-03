@@ -1,0 +1,52 @@
+<!-- Task edit form begin -->
+        <div class="row edit-form" id="edit_{id}">
+          <form class="col s12" method="POST" action="/manage-task/{.id}?_method=PUT">
+            <!-- Time slider -->
+            <div class="row" >
+              <p>Select estimated task time</p>
+                <p class="range-field">
+                  <input type="range" name="duration_minutes" min="1" max="120" value="{duration_minutes}"/>
+                </p>
+            </div>
+            <!-- Context and project -->
+            <div class="row">
+              <div class="input-field col s6">
+                <select multiple value="{context}" name="context">
+                  <!--<option value="" disabled selected>Context populated from SQL</option>-->
+                  <option value="home">Home</option>
+                  <option value="work">Work</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="any">Any</option>
+                </select>
+                <label>Select Context</label>
+              </div>              
+              <div class="input-field col s6">
+                <input id="project_name" name="project_name" type="text" class="autocomplete" value={project_name}>
+                <label for="project_name">Project Name</label>
+              </div>
+
+            </div> 
+            <!-- Priority and notes -->
+            <div class="row">
+              <div class="input-field col s6">
+                <select name="priority">
+                  <option {@eq key=priority value="1"} selected{/eq} value="1">Critical</option>
+                  <option {@eq key=priority value="2"} selected{/eq} value="2">Normal</option>
+                  <option {@eq key=priority value="3"} selected{/eq} value="3">Minor</option>
+                </select>
+                <label>Select Priority</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="task_notes" type="text" class="validate" name="notes" value={notes}>
+                <label for="task_notes">Notes</label>
+              </div>
+            </div>
+            <div class ="row">
+              <button class="waves-effect waves-light btn-large col s2" type="submit" name="_method" value="DELETE">Delete</button> 
+              <button class="waves-effect waves-light btn-large col s2 offset-s8" type="submit" >Update</button> 
+              <!--<button class="waves-effect waves-light btn-large col s4 offset-s2" type="reset" name="action">Cancel</button> -->
+            </div>
+          </form>
+        </div>
+        
+        <!-- Task edit form end -->

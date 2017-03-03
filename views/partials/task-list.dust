@@ -1,9 +1,0 @@
-{<task-list}
-    <div class="divider"></div>
-    <div class="section">
-        <h5>{task_name}</h5>
-        <p>{notes}</p>
-        <p>{duration}</p>
-        Priority: {priority}
-    </div>
-{/task-list}

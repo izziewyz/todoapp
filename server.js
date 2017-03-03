@@ -29,11 +29,11 @@ cons.dust.render('notatemplate', {
   ext: app.get('view engine'),
   views: path.resolve(__dirname, app.get('views'))
 }, function() {
-    console.log('Template Worked')
+    console.log('Template Engine start')
 });
 // require('./dust-helpers')(cons.requires.dust);
 
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({force: false}).then(() => {
     app.listen(port);
     console.log('App running on: ' + port);
 });

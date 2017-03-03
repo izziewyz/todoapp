@@ -1,0 +1,32 @@
+{?taskList}
+    {#taskList}
+    <div class="row task-row" id="task_{id}">
+        <div class="divider"></div>
+        <div class="col s2">
+        <a class="btn-floating btn-large red left complete-button" data-id="{id}">
+            <i class="large material-icons">done</i>
+        </a> 
+        </div>
+        <div class="col s6">
+            <h5>{task_name}</h5>
+        </div>
+        <div class="col s2">
+            <p class="right-align">{duration_minutes} minute(s).</p>
+        </div>
+        <div class= "col s2">
+        <a class="btn-floating btn-large red right edit-button" data-id="{id}">
+            <i class="large material-icons">mode_edit</i>
+        </a>          
+        </div>
+        {> "partials/task-edit" tasks=tasks /}
+    </div>
+    {/taskList}
+
+{:else}
+    <div class="row">
+        <div class="divider"></div>
+        <div class= "col s12">
+            No tasks available
+        </div>
+{/.taskList}
+<div class="divider"></div>
