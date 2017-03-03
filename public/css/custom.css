@@ -46,6 +46,12 @@
 .edit-button {
     margin-top: 15px;
 }
+
+.image-logo {
+    width: 40px;
+    height: auto;
+    line-height: 64px;
+}
 /*i.large {
     line-height: 100px;
 	font-size: 6rem;
