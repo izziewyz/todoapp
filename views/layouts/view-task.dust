@@ -1,6 +1,21 @@
 {> "layouts/main" /}
 {<main_content}
     <h2>Your tasks</h2>
+    <div class="row">
+    <form method="POST" class="">
+      <div class="input-field col l2 offset-l10 s4 offset-s8 right">
+        <select name="status">
+        <option value="false">Active</option>
+        <option value="true">Completed</option>
+        <option value="null" selected>All</option>
+        </select>
+        <label>Task Status</label>
+        </div>
+        <div class="col l4 offset-l8 s6 offset-s6 ">
+            <button href="../manage-task" class="waves-effect waves-light right btn">Filter</button>
+        </div>
+    </form>
+    </div>
     {> "partials/task-item" taskList=tasks/}
 
 {/main_content}

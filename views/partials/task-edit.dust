@@ -41,11 +41,11 @@
                 <label for="task_notes">Notes</label>
               </div>
             </div>
-            <div class ="row">
-              <button class="waves-effect waves-light btn-large col s2" type="submit" name="_method" value="DELETE">Delete</button> 
-              <button class="waves-effect waves-light btn-large col s2 offset-s8" type="submit" >Update</button> 
-              <!--<button class="waves-effect waves-light btn-large col s4 offset-s2" type="reset" name="action">Cancel</button> -->
-            </div>
+            <!--<div class ="row">-->
+              <button class="waves-effect waves-light btn-large col s2 offset-s5" type="submit" >Update</button> 
+          </form>
+          <form class="col s12" method="POST" action="/manage-task/{.id}?_method=DELETE">
+              <button class="waves-effect waves-light red btn-large col s2 offset-s10" id="delete" type="submit">Delete</button> 
           </form>
         </div>
         

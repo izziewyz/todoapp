@@ -1,9 +1,9 @@
 {?taskList}
     {#taskList}
-    <div class="row task-row" id="task_{id}">
+    <div class="row task-row {?.completed}disabled{/completed}" id="task_{id}">
         <div class="divider"></div>
-        <div class="col s2">
-        <a class="btn-floating btn-large red left complete-button" data-id="{id}">
+        <div class="col s2"> 
+        <a class="btn-floating btn-large red left complete-button {?.completed}disabled{/completed}" data-id="{id}">
             <i class="large material-icons">done</i>
         </a> 
         </div>
@@ -14,7 +14,7 @@
             <p class="right-align">{duration_minutes} minute(s).</p>
         </div>
         <div class= "col s2">
-        <a class="btn-floating btn-large red right edit-button" data-id="{id}">
+        <a class="btn-floating btn-large red right edit-button {?.completed}disabled{/completed}" data-id="{id}">
             <i class="large material-icons">mode_edit</i>
         </a>          
         </div>

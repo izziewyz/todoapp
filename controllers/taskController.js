@@ -59,10 +59,27 @@ router.get('/done', (req, res) => {
 
 
 router.get('/manage-task', (req, res) => {
-    Models.Task.findAll({
-       
-    }).then((data) => {
+    Models.Task.findAll({})
+        .then((data) => {
             // console.log(data)
+        let dustObj = {};
+        dustObj.tasks = data;
+        res.render('layouts/view-task', dustObj);
+    });
+});
+
+router.post('/manage-task', (req, res) => {
+    console.log(req.body.status)
+    let status = req.body.status == 'null' ? [false, true] : (req.body.status == 'true' ? [true] : [false]);
+    console.log(status);
+    Models.Task.findAll({
+        order: 'updatedAt DESC',
+        where: {
+            completed: {
+                $in: status,
+            }
+        }
+    }).then((data) =>  { 
         let dustObj = {};
         dustObj.tasks = data;
         res.render('layouts/view-task', dustObj);
@@ -114,6 +131,7 @@ router.put('/manage-task/:id', (req, res) => {
 });
 
 router.delete('/manage-task/:id', (req, res) => {
+    console.log('eh?')
     Models.Task.destroy({
         where: {
             id: req.params.id
