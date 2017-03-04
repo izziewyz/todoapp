@@ -16,9 +16,9 @@
             <button href="../manage-task" class="waves-effect waves-light right btn">Filter</button>
         </div>
     </form>
+    </div>
     {/manage}
     
-    </div>
     {> "partials/task-item" taskList=tasks/}
 
 {/main_content}

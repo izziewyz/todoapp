@@ -30,7 +30,7 @@ router.post('/do-task', (req, res) => {
             $in: context
         },
         completed: {
-            $eq: true
+            $eq: false
         }
     };
 
@@ -60,7 +60,6 @@ router.get('/done', (req, res) => {
             }
         }
     }).then((data) => {
-            // console.log(data)
         let dustObj = {};
         dustObj.tasks = data;
         res.render('./layouts/view-task', dustObj);
@@ -150,5 +149,12 @@ router.delete('/manage-task/:id', (req, res) => {
         }
     }).then(() => res.redirect('back'));
 });
+
+router.get('/projectname', (req, res) => {
+    console.log(req);
+    res.send()
+});
+
+
 
 module.exports = router;
