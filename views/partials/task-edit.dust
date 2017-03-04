@@ -14,9 +14,9 @@
               <div class="input-field col s4 offset-s1">
                 <select value="{context}" name="context">
                   <!--<option value="" disabled selected>Context populated from SQL</option>-->
-                  <option value="home">Home</option>
-                  <option value="work">Work</option>
-                  <option value="mobile">Mobile</option>
+                  <option value="home" {@eq key=context value="home"}selected{/eq}>Home</option>
+                  <option value="work" {@eq key=context value="work"}selected{/eq}>Work</option>
+                  <option value="mobile" {@eq key=context value="mobile"}selected{/eq}>Mobile</option>
                   <!--<option value="any">Any</option>-->
                 </select>
                 <label>Select Context</label>
