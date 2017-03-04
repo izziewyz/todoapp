@@ -1,6 +1,6 @@
 <!-- Task edit form begin -->
         <div class="row edit-form" id="edit_{id}">
-          <form class="col s12" method="POST" action="/manage-task/{.id}?_method=PUT">
+          <form class="col s10 offset-s1" method="POST" action="/manage-task/{.id}?_method=PUT">
             <!-- Time slider -->
             <div class="row" >
               <p>Select estimated task time</p>

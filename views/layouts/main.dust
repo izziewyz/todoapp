@@ -22,7 +22,7 @@
       <nav class="">
         <div class="nav-wrapper container">
           <a href="../" class="brand-logo">
-           <img src="../images/boxing-glove.png" class="image-logo responsive-img">KnocksHitsOut.com
+           <img src="../images/boxing-glove.png" class="image-logo responsive-img">knockshitsout.com
             </a>
           <a href=../ data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">

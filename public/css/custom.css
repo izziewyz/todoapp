@@ -28,6 +28,7 @@
     opacity: 0.25;
 }
 
+
 /*#task_1 > div.col.s6 > h5*/
 
 .disabled > div > h5,
@@ -50,7 +51,10 @@
 .image-logo {
     width: 40px;
     height: auto;
-    line-height: 64px;
+    /*line-height: 64px;*/
+    top: 10px;
+	position: absolute;
+	left: -50px;
 }
 
 .inline-button {

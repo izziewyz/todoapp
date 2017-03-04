@@ -23,7 +23,7 @@ router.post('/do-task', (req, res) => {
          [req.body.context];
 
     Models.Task.findAll({
-        limit: 2,
+        limit: 5,
         order: 'priority DESC',
         where: {
             duration_minutes: {
@@ -61,7 +61,6 @@ router.get('/done', (req, res) => {
 router.get('/manage-task', (req, res) => {
     Models.Task.findAll({})
         .then((data) => {
-            // console.log(data)
         let dustObj = {};
         dustObj.tasks = data;
         res.render('layouts/view-task', dustObj);
