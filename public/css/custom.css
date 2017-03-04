@@ -84,6 +84,10 @@
 	padding: 20px 2px;
 }
 
+#delete {
+    margin-top: 10px;
+}
+
 /*i.large {
     line-height: 100px;
 	font-size: 6rem;

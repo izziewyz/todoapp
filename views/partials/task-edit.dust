@@ -43,10 +43,10 @@
               </div>
             </div>
             <!--<div class ="row">-->
-              <button class="waves-effect waves-light btn-large col s2 offset-s5" type="submit" >Update</button> 
+              <button class="waves-effect waves-light btn-large col s6 offset-s3 l4 offset-l4" type="submit" >Update</button> 
           </form>
-          <form class="col s12" method="POST" action="/manage-task/{.id}?_method=DELETE">
-              <button class="waves-effect waves-light red btn col l1 offset-l11 s4 offset-s8" id="delete" type="submit">Delete</button> 
+          <form class="col s10 offset-s1" method="POST" action="/manage-task/{.id}?_method=DELETE">
+              <button class="waves-effect waves-light red btn col l2 offset-l10 s6 offset-s3" id="delete" type="submit">Delete</button> 
           </form>
         </div>
         

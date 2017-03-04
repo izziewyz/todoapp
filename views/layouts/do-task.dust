@@ -28,7 +28,7 @@
             </div>
             <div class="card-action">
                 <input name="context" type="radio" id="card-home" value="home" />
-                <label for="card-home">home</label>
+                <label for="card-home">Home</label>
             </div>
           </div>
         </div>
