@@ -1,13 +1,10 @@
-  $(document).ready(function(){
-    // $('.collapsible').collapsible();
+  $(document).ready(function() {
     $(".button-collapse").sideNav();
     $('select').material_select();
     
     // Autocomplete object to be built from existing SQL projects
    
-
     $('.edit-button').on('click', (event) => {
-      // $('.edit-form').map(form => form.style.display = "none");
       $('#edit_' + event.currentTarget.dataset.id).animate({
             height: "toggle",
             opacity: '1',
@@ -26,11 +23,4 @@
       });
 
     });
-
-  	$('#autocomplete-input').autocomplete({
-			source: '/projectname',
-			minLength: 1,
-      
-		});
-
   });

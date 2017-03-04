@@ -31,8 +31,9 @@
 
 /*#task_1 > div.col.s6 > h5*/
 
-.disabled > div > h5,
-.disabled > div > p {
+.disabled > div > div > h5,
+.disabled > div > div > p,
+.disabled > div > div > span {
     text-decoration: line-through;
     color: grey;
 }

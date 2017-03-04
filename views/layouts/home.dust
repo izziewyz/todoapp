@@ -40,13 +40,15 @@
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
-              <img src="images/lists.jpg">
+              <a href="http://fakebsod.com/windows-8-and-10">
+                <img src="images/lists.jpg">
+              </a>
               <span class="card-title"></span>
             </div>
             <div class="card-content">
             </div>
             <div class="card-action">
-              <a href="./lists/">Ref Lists</a>
+              <a href="http://fakebsod.com/windows-8-and-10">Ref Lists</a>
             </div>
           </div>
         </div>
@@ -54,7 +56,9 @@
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
-              <img src="images/doneTask.jpg">
+              <a href="./done/">
+                <img src="images/doneTask.jpg">
+              </a>
               <span class="card-title"></span>
             </div>
             <div class="card-content">

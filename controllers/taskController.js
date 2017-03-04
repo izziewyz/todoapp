@@ -51,6 +51,20 @@ router.post('/do-task', (req, res) => {
     });
 });
 
+router.put('/do-task/:id', (req, res) => {
+    Models.Task.update(
+    {
+       completed: true
+    },
+    {
+        where: {
+            id: {
+             $eq: req.params.id
+            }
+        }
+    }).then(() => res.redirect('back'));
+});
+
 router.get('/done', (req, res) => {
     Models.Task.findAll({
         order: 'updatedAt DESC',
@@ -68,8 +82,9 @@ router.get('/done', (req, res) => {
 
 
 router.get('/manage-task', (req, res) => {
-    Models.Task.findAll({})
-        .then((data) => {
+    Models.Task.findAll({
+            order: 'updatedAt DESC',
+        }).then((data) => {
         let dustObj = {};
         dustObj.tasks = data;
         dustObj.manage = true;
@@ -112,29 +127,6 @@ router.post('/add-task', (req, res) => {
     });
 });
 
-// Route for viewing 5 most recent tasks on the add task page
-router.get('/add-task', (req, res) => {
-        Models.Task.findAll({
-            limit: 5,
-            order: 'id DESC'
-        }).then((data) => {
-        let dustObj = {};
-        dustObj.tasks = data;
-        res.render('layouts/add-task', dustObj);
-    });
-});
-
-router.put('/do-task/:id', (req, res) => {
-    Models.Task.update({
-       completed: true
-    },
-    {
-        where: {
-            id: req.params.id
-        }
-    }).then(() => res.redirect('back'));
-});
-
 router.put('/manage-task/:id', (req, res) => {
     Models.Task.update(req.body, {where: {id: req.params.id}}).then(
         () => res.redirect('back')
@@ -149,12 +141,16 @@ router.delete('/manage-task/:id', (req, res) => {
         }
     }).then(() => res.redirect('back'));
 });
-
-router.get('/projectname', (req, res) => {
-    console.log(req);
-    res.send()
+// Route for viewing 5 most recent tasks on the add task page
+router.get('/add-task', (req, res) => {
+        Models.Task.findAll({
+            limit: 5,
+            order: 'id DESC'
+        }).then((data) => {
+        let dustObj = {};
+        dustObj.tasks = data;
+        res.render('layouts/add-task', dustObj);
+    });
 });
-
-
 
 module.exports = router;
