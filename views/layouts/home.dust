@@ -15,7 +15,7 @@
             <div class="card-content">
             </div>
             <div class="card-action">
-              <a href="./add-task/">Dump Task</a>
+              <a href="./add-task/">Add Task</a>
             </div>
           </div>
         </div>

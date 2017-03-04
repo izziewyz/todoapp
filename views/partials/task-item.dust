@@ -1,22 +1,36 @@
 {?taskList}
     {#taskList}
-    <div class="row task-row {?.completed}disabled{/completed}" id="task_{id}">
+    <div class="task-row {?.completed}disabled{/completed}" id="task_{id}">
         <div class="divider"></div>
-        <div class="col s2"> 
+        <div class="row">
+        <div class="col s1"> 
         <a class="btn-floating btn-large red left complete-button {?.completed}disabled{/completed}" data-id="{id}">
             <i class="large material-icons">done</i>
         </a> 
         </div>
-        <div class="col s6">
-            <h5>{task_name}</h5>
-        </div>
-        <div class="col s2">
-            <p class="right-align">{duration_minutes} minute(s).</p>
-        </div>
-        <div class= "col s2">
+        <!--<div class="row">-->
+            <div class="col s6">
+                <h5>{task_name}</h5>
+            </div>
+            <div class="col s4">
+                <p class="right-align">{duration_minutes} minute(s).</p>
+            </div>
+        <div class= "col s1">
         <a class="btn-floating btn-large red right edit-button {?.completed}disabled{/completed}" data-id="{id}">
             <i class="large material-icons">mode_edit</i>
         </a>          
+        </div>
+        <!--</div>-->
+        <!--<div class="row">-->
+            <div class="col s6 offset-s1">
+                <span>{notes}</span>
+            </div>
+            <div class="col s4 right-align">
+                {?project_name}
+                    Project: {project_name}
+                {/project_name}
+            </div>
+        <!--</div>-->
         </div>
         {> "partials/task-edit" tasks=tasks /}
     </div>
@@ -26,7 +40,7 @@
     <div class="row">
         <div class="divider"></div>
         <div class= "col s12">
-            No tasks available
+            You have no tasks based on your options. Enjoy your day!
         </div>
 {/.taskList}
 <div class="divider"></div>

@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
 
         priority: {
             type: DataTypes.INTEGER,
-            defaultValue: 2,
+            defaultValue: 1,
             allowNull: false,
             validate: {
                 isInt: true,

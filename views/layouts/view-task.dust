@@ -1,6 +1,7 @@
 {> "layouts/main" /}
 {<main_content}
     <h2>Your tasks</h2>
+    {?manage}
     <div class="row">
     <form method="POST" class="">
       <div class="input-field col l2 offset-l10 s4 offset-s8 right">
@@ -16,6 +17,8 @@
         </div>
     </form>
     </div>
+    {/manage}
+    
     {> "partials/task-item" taskList=tasks/}
 
 {/main_content}

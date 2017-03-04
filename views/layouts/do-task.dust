@@ -3,14 +3,7 @@
 
 
 {<main_content}
-<!--
-<h1>Super duper {#tasks}
-    {task_name}
-    {id}
-    {duration_minutes}
-    {context}
-    {/tasks}
-</h1>-->
+
     <h2 class="center-align">Pick your options below.</h2>
    <!--sliderbar -->  
 <form method="POST">
@@ -108,22 +101,19 @@
 	<!--input auto complete box-->
     <div class="row">
     <div class="col s6 offset-s3">
-            <p class="range-field">
-                <label name="duration_minutes">How many minutes do you have?</label>
-                <input type="range" id="time-range" name="duration_minutes" min="1" max="120" />
-            </p>
+      <p class="range-field">
+          <label name="duration_minutes">How many minutes do you have?</label>
+          <input type="range" id="time-range" name="duration_minutes" min="1" max="120" />
+      </p>
     </div>
    </div>
-   <!--<div class="row">
-        <input type="" name="" autocomplete="on" style="margin-left: 535px; height: 35px; width: 200px;">
-        <a class="waves-effect waves-light btn-large" style="margin-left: 585px; margin-top: 20px;">GO</a>
-   </div>-->
+
     <div class="row">
     <div class="col s6 offset-s3">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">textsms</i>
-          <input type="text" id="autocomplete-input" name="project_name" class="autocomplete">
+          <input type="text" id="autocomplete-input" autocomplete="on" name="project_name" class="autocomplete">
           <label for="autocomplete-input">Project Name</label>
           
           <div class="col s6 offset-s3">
@@ -137,7 +127,5 @@
     </div>
   </div>
 </form>
-
-
 	
 {/main_content}

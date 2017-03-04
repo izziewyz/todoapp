@@ -22,17 +22,27 @@ router.post('/do-task', (req, res) => {
          ['home', 'work', 'mobile'] :
          [req.body.context];
 
+    const whereObj = {
+        duration_minutes: {
+            $lte: duration
+        },
+        context: {
+            $in: context
+        },
+        completed: {
+            $eq: false
+        }
+    };
+
+    if (req.body.project_name) {
+        whereObj.project_name = req.body.project_name;
+    }
+
     Models.Task.findAll({
         limit: 5,
         order: 'priority DESC',
-        where: {
-            duration_minutes: {
-                $lte: duration
-            },
-            context: {
-                $in: context
-            },
-        }
+        where: whereObj
+        
     }).then((data) => {
             // console.log(data)
         let dustObj = {};
@@ -50,7 +60,6 @@ router.get('/done', (req, res) => {
             }
         }
     }).then((data) => {
-            // console.log(data)
         let dustObj = {};
         dustObj.tasks = data;
         res.render('./layouts/view-task', dustObj);
@@ -63,6 +72,7 @@ router.get('/manage-task', (req, res) => {
         .then((data) => {
         let dustObj = {};
         dustObj.tasks = data;
+        dustObj.manage = true;
         res.render('layouts/view-task', dustObj);
     });
 });
@@ -81,16 +91,18 @@ router.post('/manage-task', (req, res) => {
     }).then((data) =>  { 
         let dustObj = {};
         dustObj.tasks = data;
+        dustObj.manage = true;
         res.render('layouts/view-task', dustObj);
     });
 });
 
 router.post('/add-task', (req, res) => {
-    console.log(req.body)
+    const context = req.body.context == 'any' ? ['home', 'work', 'mobile'] : req.body.context;
+    console.log(context)
     Models.Task.create({
         task_name: req.body.task_name,
         project_name: "",
-        context: req.body.context,
+        context: context,
         notes: "",
         duration_minutes: req.body.duration_minutes,
         priority: 3,
@@ -125,7 +137,7 @@ router.put('/do-task/:id', (req, res) => {
 
 router.put('/manage-task/:id', (req, res) => {
     Models.Task.update(req.body, {where: {id: req.params.id}}).then(
-        ()=> res.redirect('back')
+        () => res.redirect('back')
     );
 });
 
@@ -137,5 +149,12 @@ router.delete('/manage-task/:id', (req, res) => {
         }
     }).then(() => res.redirect('back'));
 });
+
+router.get('/projectname', (req, res) => {
+    console.log(req);
+    res.send()
+});
+
+
 
 module.exports = router;
