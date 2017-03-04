@@ -60,6 +60,28 @@
 .inline-button {
     display: inline-block;
 }
+
+.floating-button-right, 
+.floating-button-left {
+    position: relative;
+	top: 20px;
+}
+
+.floating-button-left {
+	left: 10px;
+}
+
+.floating-button-right {
+	right: 10px;
+    top: -28px
+}
+
+.row-ring-style {
+    border: rgba(255, 0, 0, 0.7) solid 10px;
+	border-radius: 8px;
+	padding: 20px 2px;
+}
+
 /*i.large {
     line-height: 100px;
 	font-size: 6rem;

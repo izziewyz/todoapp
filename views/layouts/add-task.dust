@@ -17,7 +17,7 @@
           <form class="col s8 offset-s2" method="POST">
             <div class="row">
               <div class="input-field col s8 offset-s2">
-                <input id="task_name" type="text" class="validate" name="task_name">
+                <input id="task_name" type="text" class="validate" pattern=".{3,}"   required title="3 characters minimum" name="task_name">
                 <label for="task_name">New Task</label>
               </div>
             </div>
@@ -35,7 +35,7 @@
                   <option value="home">Home</option>
                   <option value="work">Work</option>
                   <option value="mobile">Mobile</option>
-                  <option value="any">Any</option>
+                  <!--<option selected value="any">Any</option>-->
                 </select>
                 <label>Select Context</label>
               </div>

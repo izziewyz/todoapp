@@ -1,6 +1,7 @@
 {> "layouts/main" /}
 {<main_content}
     <h2>Your tasks</h2>
+    {?manage}
     <div class="row">
     <form method="POST" class="">
       <div class="input-field col l2 offset-l10 s4 offset-s8 right">
@@ -15,6 +16,8 @@
             <button href="../manage-task" class="waves-effect waves-light right btn">Filter</button>
         </div>
     </form>
+    {/manage}
+    
     </div>
     {> "partials/task-item" taskList=tasks/}
 
