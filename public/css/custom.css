@@ -33,7 +33,8 @@
 
 .disabled > div > div > h5,
 .disabled > div > div > p,
-.disabled > div > div > span {
+.disabled > div > div > span,
+.disabled > div > div {
     text-decoration: line-through;
     color: grey;
 }
